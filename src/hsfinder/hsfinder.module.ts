@@ -2,13 +2,13 @@ import { Module } from '@nestjs/common';
 import { HsfinderController } from './hsfinder.controller';
 import { HsfinderService } from './hsfinder.service';
 import { MongooseModule } from '@nestjs/mongoose';
-import { HSfinderSchema } from './schemas/hsfinder.schema';
+import { HScodeSchema } from './schemas/hsfinder.schema';
 
 @Module({
-  // imports: [MongooseModule.forFeature([{
-  //   name: 'HSfinder',
-  //   schema: HSfinderSchema,
-  // }])],
+  imports: [MongooseModule.forFeature([{
+    name: 'HSfinder',
+    schema: HScodeSchema
+  }])],
   controllers: [HsfinderController],
   providers: [HsfinderService]
 })

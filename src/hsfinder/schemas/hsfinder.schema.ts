@@ -1,4 +1,4 @@
-import { Prop, Schema } from "@nestjs/mongoose";
+import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 
 export enum Type {
     ARTICLE = 'Article',
@@ -9,7 +9,7 @@ export enum Type {
 @Schema({
     timestamps: true,
 })
-export class HSfinderSchema {
+export class HSfinder {
     @Prop()
     hsChapterNumber: number;
 
@@ -96,3 +96,5 @@ export class HSfinderSchema {
         image: string
     }[]
 }
+
+export const HScodeSchema = SchemaFactory.createForClass(HSfinder);
