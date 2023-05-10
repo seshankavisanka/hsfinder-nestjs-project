@@ -14,13 +14,13 @@ export class HsfinderService {
         const hsfinder = await this.hsfinderModel.find();
         return hsfinder
     }
-/*
-    async create(hscode: HSfinder): Promise<HSfinder> {
+
+    async create(hscode: HScode): Promise<HScode> {
         const createhscode = await this.hsfinderModel.create(hscode)
         return createhscode
     }
 
-    async findByID(id: string): Promise<HSfinder> {
+    async findByID(id: string): Promise<HScode> {
         const hscode = await this.hsfinderModel.findById(id)
         if(!hscode) {
             throw new NotFoundException('Chapter not found')
@@ -28,7 +28,7 @@ export class HsfinderService {
         return hscode
     }
 
-    async updateByID(id: string, hscode: HSfinder): Promise<HSfinder> {
+    async updateByID(id: string, hscode: HScode): Promise<HScode> {
         const updatehscode = await this.hsfinderModel.findByIdAndUpdate(id, hscode, {
             new: true,
             runValidators: true
@@ -39,12 +39,12 @@ export class HsfinderService {
         return updatehscode
     }
 
-    async deleteByID(id: string): Promise<HSfinder> {
+    async deleteByID(id: string): Promise<HScode> {
         const hscode = await this.hsfinderModel.findById(id)
         if(!hscode) {
             throw new NotFoundException('Chapter not found')
         }
         return hscode
     }
-*/
+
 }

@@ -11,12 +11,12 @@ export class HsfinderController {
     async getAll(): Promise<HScode[]> {
         return this.hsfinderService.findAll();
     }
-/*
+
     @Post()
     async createAll(
         @Body()
         hscode: HSFinderDTO
-    ): Promise<HSfinder> {
+    ): Promise<HScode> {
         return this.hsfinderService.create(hscode);
     }
 
@@ -24,7 +24,7 @@ export class HsfinderController {
     async getOne(
         @Param('id')
         id: string
-    ): Promise<HSfinder> {
+    ): Promise<HScode> {
         return this.hsfinderService.findByID(id);
     }
 
@@ -34,7 +34,7 @@ export class HsfinderController {
         id: string,
         @Body()
         hscode: HSFinderDTO
-    ): Promise<HSfinder> {
+    ): Promise<HScode> {
         return this.hsfinderService.updateByID(id, hscode);
     }
 
@@ -42,8 +42,8 @@ export class HsfinderController {
     async deleteOne(
         @Param('id')
         id: string
-    ): Promise<HSfinder> {
+    ): Promise<HScode> {
         return this.hsfinderService.deleteByID(id);
     }
-*/
+
 }
