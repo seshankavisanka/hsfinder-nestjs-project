@@ -6,7 +6,7 @@ import { HScodeSchema } from './schemas/hsfinder.schema';
 
 @Module({
   imports: [MongooseModule.forFeature([{
-    name: 'HSfinder',
+    name: 'HScode',
     schema: HScodeSchema
   }])],
   controllers: [HsfinderController],

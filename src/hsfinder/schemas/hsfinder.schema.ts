@@ -9,7 +9,7 @@ export enum Type {
 @Schema({
     timestamps: true,
 })
-export class HSfinder {
+export class HScode {
     @Prop()
     hsChapterNumber: number;
 
@@ -26,7 +26,7 @@ export class HSfinder {
     description: string;
 
     @Prop({ type: [String] })
-    moreInfo: string;
+    moreInfo: string[];
 
     @Prop()
     imposedBill: string;
@@ -60,10 +60,8 @@ export class HSfinder {
                 date: { type: String },
                 value: { type: String },
                 imposedBill: { type: String }
-            }],
-            default: []
-        }],
-        default: []
+            }]
+        }]
     })
     duty: {
         group: string,
@@ -75,7 +73,7 @@ export class HSfinder {
             date: string,
             value: string,
             imposedBill: string
-        }[]
+        },
     }
 
     @Prop({
@@ -85,8 +83,7 @@ export class HSfinder {
             keywords: { type: String },
             source: { type: String },
             image: { type: String }
-        }],
-        default: []
+        }]
     })
     referenceProduct: {
         name: string,
@@ -94,7 +91,7 @@ export class HSfinder {
         keywords: string,
         source: string,
         image: string
-    }[]
+    }
 }
 
-export const HScodeSchema = SchemaFactory.createForClass(HSfinder);
+export const HScodeSchema = SchemaFactory.createForClass(HScode);

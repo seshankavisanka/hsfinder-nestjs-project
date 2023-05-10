@@ -1,3 +1,4 @@
+import { IsNotEmpty, IsNumber } from "class-validator";
 import { Type } from "../schemas/hsfinder.schema";
 
 class History {
@@ -12,7 +13,7 @@ class Duty {
     value: string;
     since: string;
     lastModified: string;
-    history: History
+    history: History;
 }
 
 class ReferenceProduct {
@@ -24,6 +25,8 @@ class ReferenceProduct {
 }
 
 export class HSFinderDTO {
+    @IsNumber()
+    @IsNotEmpty()
     readonly hsChapterNumber: number;
     readonly hsChapterRoman: string;
     readonly type: Type;
