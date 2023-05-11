@@ -8,42 +8,42 @@ export class HsfinderController {
     constructor(private hsfinderService: HsfinderService) {}
 
     @Get()
-    async getAll(): Promise<HScode[]> {
-        return this.hsfinderService.findAll();
+    async getAllHScode(): Promise<HScode[]> {
+        return this.hsfinderService.findAllHScode();
     }
 
-    @Post()
-    async createAll(
+    @Post('createhscode')
+    async createHScode(
         @Body()
         hscode: HSFinderDTO
     ): Promise<HScode> {
-        return this.hsfinderService.create(hscode);
+        return this.hsfinderService.createHScode(hscode);
     }
 
     @Get(":id")
-    async getOne(
+    async getOneHScode(
         @Param('id')
         id: string
     ): Promise<HScode> {
-        return this.hsfinderService.findByID(id);
+        return this.hsfinderService.findHScodeByID(id);
     }
 
-    @Put(':id')
-    async updateOne(
+    @Put('updatehscode/:id')
+    async updateOneHScode(
         @Param('id')
         id: string,
         @Body()
         hscode: HSFinderDTO
     ): Promise<HScode> {
-        return this.hsfinderService.updateByID(id, hscode);
+        return this.hsfinderService.updateHScodeByID(id, hscode);
     }
 
-    @Delete(':id')
-    async deleteOne(
+    @Delete('deletehscode/:id')
+    async deleteOneHScode(
         @Param('id')
         id: string
     ): Promise<HScode> {
-        return this.hsfinderService.deleteByID(id);
+        return this.hsfinderService.deleteHScodeByID(id);
     }
 
 }
