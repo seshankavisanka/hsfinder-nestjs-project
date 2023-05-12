@@ -2,17 +2,18 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { HScode } from './schemas/hsfinder.schema';
 import * as mongoose from 'mongoose';
+import { UpdateHSFinderDTO } from './dto/updatehsfinder.dto';
 
 @Injectable()
 export class HsfinderService {
     constructor(
-        @InjectModel(HScode.name, 'hsfinderconnection')
+        @InjectModel(HScode.name)
         private hsfinderModel: mongoose.Model<HScode>
     ) {}
 
     async findAllHScode(): Promise<HScode[]> {
-        const findallhsfinder = await this.hsfinderModel.find();
-        return findallhsfinder
+        const findallhscode = await this.hsfinderModel.find();
+        return findallhscode
     }
 
     async createHScode(hscode: HScode): Promise<HScode> {
@@ -23,18 +24,17 @@ export class HsfinderService {
     async findHScodeByID(id: string): Promise<HScode> {
         const findhscode = await this.hsfinderModel.findById(id)
         if(!findhscode) {
-            throw new NotFoundException('Chapter not found')
+            throw new NotFoundException('HScode not found')
         }
         return findhscode
     }
 
     async updateHScodeByID(id: string, hscode: HScode): Promise<HScode> {
         const updatehscode = await this.hsfinderModel.findByIdAndUpdate(id, hscode, {
-            new: true,
-            runValidators: true
+            new: true
         })
-        if(!hscode) {
-            throw new NotFoundException('Chapter not found')
+        if(!updatehscode) {
+            throw new NotFoundException('HScode not found')
         }
         return updatehscode
     }
@@ -42,7 +42,7 @@ export class HsfinderService {
     async deleteHScodeByID(id: string): Promise<HScode> {
         const deletehscode = await this.hsfinderModel.findByIdAndDelete(id)
         if(!deletehscode) {
-            throw new NotFoundException('Chapter not found')
+            throw new NotFoundException('HScode not found')
         }
         return deletehscode
     }

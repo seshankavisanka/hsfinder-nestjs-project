@@ -2,14 +2,15 @@ import { Body, Controller, Delete, Get, Param, Post, Put, UsePipes, ValidationPi
 import { HsfinderService } from './hsfinder.service';
 import { HScode } from './schemas/hsfinder.schema';
 import { HSFinderDTO } from './dto/hsfinder.dto';
+import { UpdateHSFinderDTO } from './dto/updatehsfinder.dto';
 
 @Controller('hsfinder/hscode')
 export class HsfinderController {
-    constructor(private hsfinderService: HsfinderService) {}
+    constructor(private hscodeService: HsfinderService) {}
 
     @Get()
     async getAllHScode(): Promise<HScode[]> {
-        return this.hsfinderService.findAllHScode();
+        return this.hscodeService.findAllHScode();
     }
 
     @Post('createhscode')
@@ -17,15 +18,15 @@ export class HsfinderController {
         @Body()
         hscode: HSFinderDTO
     ): Promise<HScode> {
-        return this.hsfinderService.createHScode(hscode);
+        return this.hscodeService.createHScode(hscode);
     }
 
-    @Get(":id")
+    @Get(':id')
     async getOneHScode(
         @Param('id')
         id: string
-    ): Promise<HScode> {
-        return this.hsfinderService.findHScodeByID(id);
+    ): Promise<any> {
+        return this.hscodeService.findHScodeByID(id);
     }
 
     @Put('updatehscode/:id')
@@ -33,9 +34,9 @@ export class HsfinderController {
         @Param('id')
         id: string,
         @Body()
-        hscode: HSFinderDTO
+        hscode: UpdateHSFinderDTO
     ): Promise<HScode> {
-        return this.hsfinderService.updateHScodeByID(id, hscode);
+        return this.hscodeService.updateHScodeByID(id, hscode);
     }
 
     @Delete('deletehscode/:id')
@@ -43,7 +44,7 @@ export class HsfinderController {
         @Param('id')
         id: string
     ): Promise<HScode> {
-        return this.hsfinderService.deleteHScodeByID(id);
+        return this.hscodeService.deleteHScodeByID(id);
     }
 
 }

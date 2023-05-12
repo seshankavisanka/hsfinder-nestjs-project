@@ -41,3 +41,5 @@ export class Chapter {
     lastUpdated: string;
 
 }
+
+export const ChapterSchema = SchemaFactory.createForClass(Chapter)

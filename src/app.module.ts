@@ -10,9 +10,7 @@ import { ChapterModule } from './chapter/chapter.module';
       envFilePath: '.env',
       isGlobal: true
     }),
-    MongooseModule.forRoot(process.env.DB_URI, {
-      connectionName: 'hsfinderconnection',
-    }),
+    MongooseModule.forRoot(process.env.DB_URI),
     HsfinderModule,
     ChapterModule
   ]
