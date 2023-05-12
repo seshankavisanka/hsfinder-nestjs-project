@@ -51,11 +51,9 @@ export class ArticleDTO {
     @IsString()
     readonly section: string;
 
-    @IsNotEmpty()
     @IsArray()
     readonly duty: string[];
 
-    @IsNotEmpty()
     @IsArray()
     readonly referenceProduct: string[]; 
 

@@ -46,5 +46,4 @@ export class ChapterController {
     ): Promise<Chapter> {
         return this.chapterService.deleteChapterByID(id);
     }
-
 }

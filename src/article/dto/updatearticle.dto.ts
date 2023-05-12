@@ -1,7 +1,7 @@
-import { IsArray, IsEnum, IsNotEmpty, IsNumber, IsString } from "class-validator";
+import { IsEnum } from "class-validator";
 import { Types } from "../schemas/article.schema";
 
-export class ArticleDTO {
+export class UpdateArticleDTO {
 
     readonly hsCode: string;
 
@@ -9,7 +9,6 @@ export class ArticleDTO {
 
     readonly hsRoman: string;
 
-    @IsEnum(Types)
     readonly type: Types;
 
     readonly title: string;

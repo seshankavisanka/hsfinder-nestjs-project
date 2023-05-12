@@ -24,7 +24,7 @@ export class SectionService {
     async findSectionByID(id: string): Promise<Section> {
         const findsection = await this.sectionModel.findById(id)
         if(!findsection) {
-            throw new NotFoundException('Chapter not found')
+            throw new NotFoundException('Section not found')
         }
         return findsection
     }
@@ -34,7 +34,7 @@ export class SectionService {
             new: true,
         })
         if(!updatesection) {
-            throw new NotFoundException('Chapter not found')
+            throw new NotFoundException('Section not found')
         }
         return updatesection
     }
@@ -42,7 +42,7 @@ export class SectionService {
     async deleteSectionByID(id: string): Promise<Section> {
         const deletesection = await this.sectionModel.findByIdAndDelete(id)
         if(!deletesection) {
-            throw new NotFoundException('HScode not found')
+            throw new NotFoundException('Section not found')
         }
         return deletesection
     }

@@ -10,6 +10,7 @@ export enum Types {
     timestamps: true,
 })
 export class Chapter {
+    
     @Prop()
     hsChapterNumber: number;
 

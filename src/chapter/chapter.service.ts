@@ -41,7 +41,7 @@ export class ChapterService {
     async deleteChapterByID(id: string): Promise<Chapter> {
         const deletechapter = await this.chapterModel.findByIdAndDelete(id)
         if(!deletechapter) {
-            throw new NotFoundException('HScode not found')
+            throw new NotFoundException('Chapter not found')
         }
         return deletechapter
     }

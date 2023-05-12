@@ -13,8 +13,8 @@ import { ArticleModule } from './article/article.module';
       isGlobal: true
     }),
     MongooseModule.forRoot(process.env.DB_URI),
-    // HsfinderModule,
-    // ChapterModule,
+    HsfinderModule,
+    ChapterModule,
     SectionModule,
     ArticleModule
   ]

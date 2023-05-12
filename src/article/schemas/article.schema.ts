@@ -1,9 +1,9 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 
 export enum Types {
-    ARTICLE = 'ARTICLE',
-    SECTION = 'SECTION',
-    CHAPTER = 'CHAPTER',
+    Article = 'ARTICLE',
+    Section = 'SECTION',
+    Chapter = 'CHAPTER',
 }
 
 @Schema({
