@@ -29,7 +29,9 @@ export class ChapterService {
     }
 
     async updateChapterByID(id: string, chapter: Chapter): Promise<Chapter> {
-        const updatechapter = await this.chapterModel.findByIdAndUpdate(id, chapter)
+        const updatechapter = await this.chapterModel.findByIdAndUpdate(id, chapter, {
+            new: true
+        })
         if(!updatechapter) {
             throw new NotFoundException('Chapter not found')
         }

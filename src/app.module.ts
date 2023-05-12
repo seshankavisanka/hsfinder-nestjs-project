@@ -12,8 +12,8 @@ import { SectionModule } from './section/section.module';
       isGlobal: true
     }),
     MongooseModule.forRoot(process.env.DB_URI),
-    HsfinderModule,
-    // ChapterModule,
+    // HsfinderModule,
+    ChapterModule,
     // SectionModule
   ]
 })
