@@ -2,7 +2,6 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { HScode } from './schemas/hsfinder.schema';
 import * as mongoose from 'mongoose';
-import { UpdateHSFinderDTO } from './dto/updatehsfinder.dto';
 
 @Injectable()
 export class HsfinderService {
