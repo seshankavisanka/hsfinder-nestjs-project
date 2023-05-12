@@ -22,6 +22,6 @@ export class UpadteSectionDTO {
 
     readonly lastUpdated: string;
 
-    readonly section: string;
+    readonly chapter: string;
 
 }

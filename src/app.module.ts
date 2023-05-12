@@ -13,8 +13,8 @@ import { SectionModule } from './section/section.module';
     }),
     MongooseModule.forRoot(process.env.DB_URI),
     HsfinderModule,
-    ChapterModule,
-    SectionModule
+    // ChapterModule,
+    // SectionModule
   ]
 })
 export class AppModule {}

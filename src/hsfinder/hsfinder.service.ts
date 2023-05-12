@@ -30,7 +30,8 @@ export class HsfinderService {
 
     async updateHScodeByID(id: string, hscode: HScode): Promise<HScode> {
         const updatehscode = await this.hsfinderModel.findByIdAndUpdate(id, hscode, {
-            new: true
+            new: true,
+            runValidators: true
         })
         if(!updatehscode) {
             throw new NotFoundException('HScode not found')

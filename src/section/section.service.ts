@@ -16,8 +16,8 @@ export class SectionService {
         return findallsection
     }
 
-    async createSection(chapter: Section): Promise<Section> {
-        const createsection = await this.sectionModel.create(chapter)
+    async createSection(section: Section): Promise<Section> {
+        const createsection = await this.sectionModel.create(section)
         return createsection
     }
 

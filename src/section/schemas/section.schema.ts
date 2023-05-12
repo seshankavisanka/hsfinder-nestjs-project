@@ -41,7 +41,7 @@ export class Section {
     lastUpdated: string;
 
     @Prop()
-    section: string;
+    chapter: string;
 
 }
 

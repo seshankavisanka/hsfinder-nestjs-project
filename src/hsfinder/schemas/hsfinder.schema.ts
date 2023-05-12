@@ -13,7 +13,7 @@ export enum Types {
 })
 export class HScode {
 
-    @Prop()
+    @Prop({ required: true })
     hsChapterNumber: number;
 
     @Prop()

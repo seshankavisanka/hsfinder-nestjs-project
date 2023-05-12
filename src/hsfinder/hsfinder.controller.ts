@@ -34,7 +34,7 @@ export class HsfinderController {
         @Param('id')
         id: string,
         @Body()
-        hscode: UpdateHSFinderDTO
+        hscode: UpdateHSFinderDTO,
     ): Promise<HScode> {
         return this.hscodeService.updateHScodeByID(id, hscode);
     }
