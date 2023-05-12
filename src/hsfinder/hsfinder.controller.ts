@@ -1,9 +1,9 @@
-import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Post, Put, UsePipes, ValidationPipe } from '@nestjs/common';
 import { HsfinderService } from './hsfinder.service';
 import { HScode } from './schemas/hsfinder.schema';
 import { HSFinderDTO } from './dto/hsfinder.dto';
 
-@Controller('hsfinder')
+@Controller('hsfinder/hscode')
 export class HsfinderController {
     constructor(private hsfinderService: HsfinderService) {}
 

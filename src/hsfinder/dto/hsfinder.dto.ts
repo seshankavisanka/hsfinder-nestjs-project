@@ -1,5 +1,6 @@
-import { IsArray, IsEnum, IsNotEmpty, IsNumber, IsString } from "class-validator";
-import { Type } from "../schemas/hsfinder.schema";
+import { ArrayMinSize, IsArray, IsEnum, IsNotEmpty, IsNumber, IsString, ValidateNested } from "class-validator";
+import { Type } from "class-transformer";
+import { Types } from "../schemas/hsfinder.schema";
 
 class History {
 
@@ -26,6 +27,9 @@ class Duty {
     @IsNotEmpty()
     @IsString()
     key: string;
+
+    @IsNotEmpty()
+    @IsString()
     value: string;
 
     @IsNotEmpty()
@@ -36,9 +40,11 @@ class Duty {
     @IsString()
     lastModified: string;
 
-    @IsNotEmpty()
-    @IsEnum(History)
-    history: History;
+    @IsArray()
+    @ArrayMinSize(1)
+    @ValidateNested({ each: true })
+    @Type(() => History)
+    history: History[];
 
 }
 
@@ -77,8 +83,8 @@ export class HSFinderDTO {
     readonly hsChapterRoman: string;
 
     @IsNotEmpty()
-    @IsEnum(Type)
-    readonly type: Type;
+    @IsEnum(Types)
+    readonly type: Types;
 
     @IsNotEmpty()
     @IsString()
@@ -120,12 +126,16 @@ export class HSFinderDTO {
     @IsString()
     readonly chapter: string;
 
-    @IsNotEmpty()
-    @IsEnum(Duty)
-    readonly duty: Duty;
+    @IsArray()
+    @ArrayMinSize(1)
+    @ValidateNested({ each: true })
+    @Type(() => Duty)
+    readonly duty: Duty[];
 
-    @IsNotEmpty()
-    @IsEnum(ReferenceProduct)
-    readonly referenceProduct: ReferenceProduct;
+    @IsArray()
+    @ArrayMinSize(1)
+    @ValidateNested({ each: true })
+    @Type(() => ReferenceProduct)
+    readonly referenceProduct: ReferenceProduct[];
 
 }

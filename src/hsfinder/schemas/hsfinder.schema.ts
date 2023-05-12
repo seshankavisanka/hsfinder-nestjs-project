@@ -1,15 +1,18 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { ObjectId } from "mongodb";
 
-export enum Type {
-    ARTICLE = 'Article',
-    SECTION = 'Section',
-    CHAPTER = 'Chapter',
+
+export enum Types {
+    ARTICLE = 'ARTICLE',
+    SECTION = 'SECTION',
+    CHAPTER = 'CHAPTER',
 }
 
 @Schema({
     timestamps: true,
 })
 export class HScode {
+
     @Prop()
     hsChapterNumber: number;
 
@@ -17,7 +20,7 @@ export class HScode {
     hsChapterRoman: string;
 
     @Prop()
-    type: Type;
+    type: Types;
 
     @Prop()
     title: string;
@@ -73,8 +76,8 @@ export class HScode {
             date: string,
             value: string,
             imposedBill: string
-        },
-    }
+        }[],
+    }[]
 
     @Prop({
         type: [{
@@ -91,7 +94,7 @@ export class HScode {
         keywords: string,
         source: string,
         image: string
-    }
+    }[]
 }
 
 export const HScodeSchema = SchemaFactory.createForClass(HScode);
