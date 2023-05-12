@@ -3,6 +3,7 @@ import { HsfinderModule } from './hsfinder/hsfinder.module';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ChapterModule } from './chapter/chapter.module';
+import { SectionModule } from './section/section.module';
 
 @Module({
   imports: [
@@ -12,7 +13,8 @@ import { ChapterModule } from './chapter/chapter.module';
     }),
     MongooseModule.forRoot(process.env.DB_URI),
     HsfinderModule,
-    ChapterModule
+    ChapterModule,
+    SectionModule
   ]
 })
 export class AppModule {}
