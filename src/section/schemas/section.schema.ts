@@ -10,11 +10,6 @@ export enum Types {
     timestamps: true,
 })
 export class Section {
-    @Prop()
-    hsChapterNumber: number;
-
-    @Prop()
-    hsChapterRoman: string;
 
     @Prop()
     type: Types;

@@ -2,10 +2,6 @@ import { Types } from "../schemas/section.schema";
 
 export class UpadteSectionDTO {
 
-    readonly hsChapterNumber: number;
-
-    readonly hsChapterRoman: string;
-
     readonly type: Types;
 
     readonly title: string;

@@ -2,6 +2,7 @@ import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common'
 import { SectionService } from './section.service';
 import { UpadteSectionDTO } from './dto/updatesection.dto';
 import { Section } from './schemas/section.schema';
+import { selectionDTO } from './dto/section.dto';
 
 @Controller('hsfinder/section')
 export class SectionController {
@@ -16,7 +17,7 @@ export class SectionController {
     @Post('createsection')
     async createChapter(
         @Body()
-        section: Section
+        section: selectionDTO
     ): Promise<Section> {
         return this.sectionService.createSection(section);
     }

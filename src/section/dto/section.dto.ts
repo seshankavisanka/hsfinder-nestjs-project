@@ -1,15 +1,7 @@
 import { IsArray, IsEnum, IsNotEmpty, IsNumber, IsString } from "class-validator";
 import { Types } from "../schemas/section.schema";
 
-export class ChapterDTO {
-
-    @IsNotEmpty()
-    @IsNumber()
-    readonly hsChapterNumber: number;
-
-    @IsNotEmpty()
-    @IsString()
-    readonly hsChapterRoman: string;
+export class selectionDTO {
 
     @IsNotEmpty()
     @IsEnum(Types)
@@ -45,6 +37,6 @@ export class ChapterDTO {
 
     @IsNotEmpty()
     @IsString()
-    readonly section: string;
+    readonly chapter: string;
 
 }

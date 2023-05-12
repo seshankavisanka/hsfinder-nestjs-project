@@ -30,7 +30,9 @@ export class SectionService {
     }
 
     async updateSectionByID(id: string, section: Section): Promise<Section> {
-        const updatesection = await this.sectionModel.findByIdAndUpdate(id, section)
+        const updatesection = await this.sectionModel.findByIdAndUpdate(id, section, {
+            new: true,
+        })
         if(!updatesection) {
             throw new NotFoundException('Chapter not found')
         }
