@@ -3,7 +3,9 @@ import { SectionService } from './section.service';
 import { UpadteSectionDTO } from './dto/updatesection.dto';
 import { Section } from './schemas/section.schema';
 import { selectionDTO } from './dto/section.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Section')
 @Controller('hsfinder/section')
 export class SectionController {
 

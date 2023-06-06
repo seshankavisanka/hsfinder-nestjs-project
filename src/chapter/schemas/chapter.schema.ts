@@ -12,7 +12,7 @@ export enum Types {
 export class Chapter {
     
     @Prop()
-    hsChapterNumber: number;
+    hsChapterNumber?: number;
 
     @Prop()
     hsChapterRoman: string;
@@ -27,7 +27,7 @@ export class Chapter {
     description: string;
 
     @Prop({ type: [String] })
-    moreInfo: string[];
+    moreInfo?: string[];
 
     @Prop()
     imposedBill: string;

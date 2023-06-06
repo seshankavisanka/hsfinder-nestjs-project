@@ -15,7 +15,7 @@ export class Article {
     hsCode: string;
 
     @Prop()
-    hsNumber: number;
+    hsNumber?: number;
 
     @Prop()
     hsRoman: string;

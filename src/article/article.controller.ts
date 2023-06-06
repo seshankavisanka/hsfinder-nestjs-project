@@ -3,7 +3,9 @@ import { ArticleService } from './article.service';
 import { ArticleDTO } from './dto/article.dto';
 import { Article } from './schemas/article.schema';
 import { UpdateArticleDTO } from './dto/updatearticle.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Article')
 @Controller('hsfinder/article')
 export class ArticleController {
     constructor(private articleService: ArticleService) {}

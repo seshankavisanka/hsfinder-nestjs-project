@@ -3,7 +3,9 @@ import { HsfinderService } from './hsfinder.service';
 import { HScode } from './schemas/hsfinder.schema';
 import { HSFinderDTO } from './dto/hsfinder.dto';
 import { UpdateHSFinderDTO } from './dto/updatehsfinder.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('HScode')
 @Controller('hsfinder/hscode')
 export class HsfinderController {
     constructor(private hscodeService: HsfinderService) {}

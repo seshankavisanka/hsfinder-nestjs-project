@@ -10,7 +10,6 @@ async function bootstrap() {
     .setTitle('HS code finder')
     .setDescription('The HS code finder API description')
     .setVersion('1.0')
-    .addTag('HScode')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);

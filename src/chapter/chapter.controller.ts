@@ -3,7 +3,9 @@ import { ChapterService } from './chapter.service';
 import { ChapterDTO } from './dto/chapter.dto';
 import { Chapter } from './schemas/chapter.schema';
 import { UpadteChapterDTO } from './dto/updatechapter.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Chapter')
 @Controller('hsfinder/chapter')
 export class ChapterController {
     constructor(private chapterService: ChapterService) {}

@@ -14,7 +14,7 @@ export enum Types {
 export class HScode {
 
     @Prop({ required: true })
-    hsChapterNumber: number;
+    hsChapterNumber?: number;
 
     @Prop()
     hsChapterRoman: string;
@@ -29,7 +29,7 @@ export class HScode {
     description: string;
 
     @Prop({ type: [String] })
-    moreInfo: string[];
+    moreInfo?: string[];
 
     @Prop()
     imposedBill: string;
@@ -66,13 +66,13 @@ export class HScode {
             }]
         }]
     })
-    duty: {
+    duty?: {
         group: string,
         key: string,
         value: string,
         since: string,
         lastModified: string,
-        history: {
+        history?: {
             date: string,
             value: string,
             imposedBill: string
@@ -88,7 +88,7 @@ export class HScode {
             image: { type: String }
         }]
     })
-    referenceProduct: {
+    referenceProduct?: {
         name: string,
         description: string,
         keywords: string,

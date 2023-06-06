@@ -21,7 +21,7 @@ export class Section {
     description: string;
 
     @Prop({ type: [String] })
-    moreInfo: string[];
+    moreInfo?: string[];
 
     @Prop()
     imposedBill: string;
