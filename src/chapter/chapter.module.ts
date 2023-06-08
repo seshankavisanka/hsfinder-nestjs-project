@@ -5,11 +5,15 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ChapterSchema } from './schemas/chapter.schema';
 
 @Module({
-  imports: [MongooseModule.forFeature([{
-    name: 'Chapter',
-    schema: ChapterSchema
-  }])],
+  imports: [
+    MongooseModule.forFeature([
+      {
+        name: 'Chapter',
+        schema: ChapterSchema,
+      },
+    ]),
+  ],
   controllers: [ChapterController],
-  providers: [ChapterService]
+  providers: [ChapterService],
 })
 export class ChapterModule {}

@@ -1,46 +1,44 @@
-import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 export enum Types {
-    ARTICLE = 'ARTICLE',
-    SECTION = 'SECTION',
-    CHAPTER = 'CHAPTER',
+  ARTICLE = 'ARTICLE',
+  SECTION = 'SECTION',
+  CHAPTER = 'CHAPTER',
 }
 
 @Schema({
-    timestamps: true,
+  timestamps: true,
 })
 export class Chapter {
-    
-    @Prop()
-    hsChapterNumber?: number;
+  @Prop()
+  hsChapterNumber?: number;
 
-    @Prop()
-    hsChapterRoman: string;
+  @Prop()
+  hsChapterRoman: string;
 
-    @Prop()
-    type: Types;
+  @Prop()
+  type: Types;
 
-    @Prop()
-    title: string;
+  @Prop()
+  title: string;
 
-    @Prop()
-    description: string;
+  @Prop()
+  description: string;
 
-    @Prop({ type: [String] })
-    moreInfo?: string[];
+  @Prop({ type: [String] })
+  moreInfo?: string[];
 
-    @Prop()
-    imposedBill: string;
+  @Prop()
+  imposedBill: string;
 
-    @Prop()
-    source: string;
+  @Prop()
+  source: string;
 
-    @Prop()
-    reference: string;
+  @Prop()
+  reference: string;
 
-    @Prop()
-    lastUpdated: string;
-
+  @Prop()
+  lastUpdated: string;
 }
 
-export const ChapterSchema = SchemaFactory.createForClass(Chapter)
+export const ChapterSchema = SchemaFactory.createForClass(Chapter);

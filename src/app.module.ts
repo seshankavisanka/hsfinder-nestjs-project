@@ -10,13 +10,13 @@ import { ArticleModule } from './article/article.module';
   imports: [
     ConfigModule.forRoot({
       envFilePath: '.env',
-      isGlobal: true
+      isGlobal: true,
     }),
     MongooseModule.forRoot(process.env.DB_URI),
     HsfinderModule,
     ChapterModule,
     SectionModule,
-    ArticleModule
-  ]
+    ArticleModule,
+  ],
 })
 export class AppModule {}

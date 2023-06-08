@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Param, Post, Put, Delete } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Param,
+  Post,
+  Put,
+  Delete,
+} from '@nestjs/common';
 import { ArticleService } from './article.service';
 import { ArticleDTO } from './dto/article.dto';
 import { Article } from './schemas/article.schema';
@@ -8,44 +16,44 @@ import { ApiTags } from '@nestjs/swagger';
 @ApiTags('Article')
 @Controller('hsfinder/article')
 export class ArticleController {
-    constructor(private articleService: ArticleService) {}
+  constructor(private articleService: ArticleService) {}
 
-    @Get()
-    async getAllSrticles() {
-        return this.articleService.findAllArticle();
-    }
+  @Get()
+  async getAllSrticles() {
+    return this.articleService.findAllArticle();
+  }
 
-    @Post('createarticle')
-    async createChapter(
-        @Body()
-        article: ArticleDTO
-    ): Promise<Article> {
-        return this.articleService.createArticle(article);
-    }
+  @Post('createarticle')
+  async createChapter(
+    @Body()
+    article: ArticleDTO,
+  ): Promise<Article> {
+    return this.articleService.createArticle(article);
+  }
 
-    @Get(':id')
-    async getOneChapetr(
-        @Param('id')
-        id: string
-    ): Promise<Article> {
-        return this.articleService.findArticleByID(id)
-    }
+  @Get(':id')
+  async getOneChapetr(
+    @Param('id')
+    id: string,
+  ): Promise<Article> {
+    return this.articleService.findArticleByID(id);
+  }
 
-    @Put('updatearticle/:id')
-    async updateChapter(
-        @Param('id')
-        id: string,
-        @Body()
-        article: UpdateArticleDTO
-    ): Promise<Article> {
-        return this.articleService.updateArticleByID(id, article);
-    }
+  @Put('updatearticle/:id')
+  async updateChapter(
+    @Param('id')
+    id: string,
+    @Body()
+    article: UpdateArticleDTO,
+  ): Promise<Article> {
+    return this.articleService.updateArticleByID(id, article);
+  }
 
-    @Delete('deletearticle/:id')
-    async deleteChapter(
-        @Param('id')
-        id: string,
-    ): Promise<Article> {
-        return this.articleService.deleteArticleByID(id);
-    }
+  @Delete('deletearticle/:id')
+  async deleteChapter(
+    @Param('id')
+    id: string,
+  ): Promise<Article> {
+    return this.articleService.deleteArticleByID(id);
+  }
 }
